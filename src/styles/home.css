@@ -1,0 +1,49 @@
+/* font imports  */
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+/* global vars */
+
+:root {
+    --noto-sans: 'Noto Sans', sans-serif;
+    --lobster: 'Lobster', cursive;
+    --primary-logo-color: #01b2d7;
+    --secondary-logo-color: #6c19ff;
+  }
+
+/* header section  */
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-text-news {
+    font-family: var(--noto-sans);
+    font-size: 2rem;
+}
+
+.header-text-tube {
+    font-family: var(--lobster);
+    font-size: 1.6rem;
+    background: -webkit-linear-gradient(right, var(--primary-logo-color), var(--secondary-logo-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-left: 0.3em;
+    margin-bottom: 0.85em;
+}
+
+/* navbar section  */
+
+.navbar-container {
+    display: flex;
+    justify-content: center;
+}
+
+.category-selector {
+    height: 3em;
+    color: var(--primary-logo-color) !important;
+}
