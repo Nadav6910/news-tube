@@ -249,7 +249,6 @@
 
 .category-selector {
     height: 3em;
-    color: var(--primary-logo-color) !important;
     font-family: var(--arimo) !important;
 }
 
@@ -295,7 +294,6 @@
     right: 0;
     width: var(--btn-width);
     cursor: pointer;
-    background: var(--primary-logo-color);
     border-radius: 0 var(--rad) var(--rad) 0;
 }
 

@@ -1,9 +1,13 @@
+import { useContext } from "react"
+import { AppContext } from "../App"
 import { useState } from 'react';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
 export default function CategorySelector() {
+
+    const { themeState } = useContext(AppContext)
 
     const [category, setCategory] = useState("Tranding");
 
@@ -12,10 +16,11 @@ export default function CategorySelector() {
     };
 
     return (
-        <div className="category-selector-container">        
+        <div className="category-selector-container">    
             <FormControl sx={{ m: 1, minWidth: 120 }}>
                 <Select
                 className="category-selector"
+                style={{"backgroundColor": themeState && "white", "color": themeState ? "#6c19ff" : "#01b2d7"}}
                 value={category}
                 onChange={handleChange}
                 >
