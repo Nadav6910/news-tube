@@ -6,7 +6,7 @@ export default function ThemeToggle(props) {
         const toggle = document.getElementById('toggle')
 
         if (toggle.checked) {
-            document.body.style.backgroundColor = '#1b1919'
+            document.body.style.backgroundColor = 'rgb(40 38 38)'
         } else {
             document.body.style.backgroundColor = 'white'
         }

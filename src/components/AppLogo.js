@@ -9,7 +9,6 @@ export default function AppLogo() {
     return (
         <div className="logo-container">
             <NewsIcon />
-            {console.log(themeState)}
             <p className="header-text-news" style={{"color": themeState ? "white" : "black"}}>News</p>
             <p className="header-text-tube">Tube</p>
         </div>
