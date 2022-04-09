@@ -136,6 +136,7 @@
     position: relative;
     transition: all 350ms ease-in;
     overflow: hidden;
+    cursor: pointer;
     /** The sun cloud and moon stars **/
     /** Sun/Moon element **/
     /** Gray dots on the moon **/

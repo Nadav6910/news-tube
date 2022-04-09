@@ -4,6 +4,7 @@ import { useState, createContext } from "react"
 import Header from "./components/Header"
 import Navbar from "./components/Navbar"
 import Home from "./pages/Home"
+import Footer from "./components/Footer"
 // import axios from "axios"
 
 export const AppContext = createContext(null)
@@ -36,8 +37,11 @@ function App() {
         <Router>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="*" element={<Home />} />
           </Routes>
-      </Router>
+        </Router>
+
+        <Footer />
       </div>
     </AppContext.Provider>
   );
