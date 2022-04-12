@@ -18,7 +18,7 @@ export default function Home() {
       url: 'https://current-news.p.rapidapi.com/news/general',
       headers: {
         'X-RapidAPI-Host': 'current-news.p.rapidapi.com',
-        'X-RapidAPI-Key': 'b8b860b3b8msh5c1c9fa9d121e2ep120f54jsn6102f1527160'
+        'X-RapidAPI-Key': process.env.REACT_APP_CURRENT_NEWS_API_KEY
       }
     };
     
