@@ -13,6 +13,7 @@
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
   overflow: hidden;
   width: 300px;
+  min-height: 34em;
 }
 
 .card-header img {
@@ -28,7 +29,7 @@
   align-items: flex-start;
   padding: 20px;
   margin-top: -0.28em;
-  min-height: 250px;
+  min-height: 19.2em;
 }
 
 .tag {
@@ -44,6 +45,10 @@
 
 .tag-teal {
   background-color: #47bcd4;
+}
+
+.tag-tranding {
+  background-color: #bcc3c4;
 }
 
 .card-body p {
