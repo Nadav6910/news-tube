@@ -48,7 +48,7 @@
 }
 
 .tag-tranding {
-  background-color: #bcc3c4;
+  background-color: #828080;
 }
 
 .card-body p {
@@ -59,8 +59,21 @@
 .info-section {
   display: flex;
   margin-top: auto;
+  width: 100%;
+  justify-content: space-between;
 }
 
 .info h5 {
   margin: 0;
+}
+
+.article-link-container {
+  display: flex;
+  align-items: flex-end;
+}
+
+.article-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
 }

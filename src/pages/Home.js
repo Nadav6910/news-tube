@@ -28,7 +28,7 @@ export default function Home() {
       console.error(error);
     });
   }, [])
-
+console.log(generalNews);
   return (
     <>
       {generalNews === null ?
