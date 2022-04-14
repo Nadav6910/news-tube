@@ -7,10 +7,10 @@ export default function ThemeToggle(props) {
 
         const toggle = document.getElementById('toggle')
 
-        if (toggle.checked) {
-            document.body.style.backgroundColor = 'rgb(33 32 32)'
+        if (localStorage.getItem("theme") === "dark") {
+            localStorage.setItem("theme", "light")
         } else {
-            document.body.style.backgroundColor = 'white'
+            localStorage.setItem("theme", "dark")
         }
 
         props.themeState(toggle.checked)
@@ -19,7 +19,7 @@ export default function ThemeToggle(props) {
     return (
         <Tooltip title="Switch Theme" style={{"right": "5px"}}>
             <div className="toggle-container">
-                <input onChange={toggleTheme} type="checkbox" id="toggle" className="toggle--checkbox"></input>
+                <input onChange={toggleTheme} checked={localStorage.getItem("theme") === "dark" ? true : false} type="checkbox" id="toggle" className="toggle--checkbox"></input>
                 <label htmlFor="toggle" className="toggle--label">
                 <span className="toggle--label-background"></span>
                 </label>

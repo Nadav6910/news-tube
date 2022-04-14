@@ -40,15 +40,19 @@
   color: #fff;
   padding: 2px 10px;
   text-transform: uppercase;
-  cursor: pointer;
+  cursor: default;
 }
 
-.tag-teal {
-  background-color: #47bcd4;
-}
-
-.tag-tranding {
+.tag-general {
   background-color: #828080;
+}
+
+.tag-business {
+  background-color: #50b231;
+}
+
+.tag-entertainment {
+  background-color: #47bcd4;
 }
 
 .card-body p {

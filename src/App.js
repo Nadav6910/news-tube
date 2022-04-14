@@ -1,11 +1,12 @@
 import "./styles/header+navbar.css"
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import { Routes, Route } from "react-router-dom"
 import { useState, createContext } from "react"
 import Header from "./components/Header"
 import Navbar from "./components/Navbar"
 import Home from "./pages/Home"
+import BusinessPage from "./pages/BusinessPage"
+import EntertainmentPage from "./pages/EntertainmentPage"
 import Footer from "./components/Footer"
-// import axios from "axios"
 
 export const AppContext = createContext(null)
 
@@ -21,11 +22,17 @@ function App() {
   //   console.log(error);
   // })
 
-  const [themeState, setThemeState] = useState(false)
+  const [themeState, setThemeState] = useState(localStorage.getItem("theme") === "dark" ? true : false)
 
   //getting state of toggle from header component
   const themeToggle = (state) => {
     setThemeState(state)
+  }
+
+  if (themeState) {
+    document.body.style.backgroundColor = 'rgb(33 32 32)'
+  } else {
+      document.body.style.backgroundColor = 'white'
   }
 
   return (
@@ -34,12 +41,12 @@ function App() {
         <Header themeState={themeToggle}/>
         <Navbar />
 
-        <Router>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/business" element={<BusinessPage />} />
+            <Route path="/entertainment" element={<EntertainmentPage />} />
             <Route path="*" element={<Home />} />
           </Routes>
-        </Router>
 
         <Footer />
       </div>

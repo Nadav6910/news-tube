@@ -15,12 +15,12 @@ export default function NewsCard(props) {
                     <img src={props.image === null ? noPhotoImage : props.image} alt="source" style={{"objectFit": props.image === null && "contain"}}/>
                 </div>
                 <div className="card-body" style={{"backgroundColor": themeState && "#414141", "color": themeState && "white"}}>
-                    <span className="tag tag-tranding">{props.category === "general" ? "Tranding" : props.category}</span>
+                    <span className={`tag tag-${props.category}`}>{props.category === "general" ? "Tranding" : props.category}</span>
                     <h4>
                         {props.title && props.title.split(" - ")[0]}
                     </h4>
                     <p>
-                        {props.content && props.content.split("[")[0]}
+                        {props.content === null ? props.title+"..." : props.content.split("[")[0]}
                     </p>
                     <div className="info-section">
                         <div className="info">

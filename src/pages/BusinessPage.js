@@ -6,7 +6,7 @@ import TwinSpin from "react-cssfx-loading/lib/TwinSpin";
 import NewsCard from "../components/NewsCard";
 import axios from "axios"
 
-export default function Home() {
+export default function BusinessPage(props) {
 
   const { themeState } = useContext(AppContext)
 
@@ -15,7 +15,7 @@ export default function Home() {
   useEffect(() => {
     const options = {
       method: 'GET',
-      url: 'https://current-news.p.rapidapi.com/news/general',
+      url: 'https://current-news.p.rapidapi.com/news/business',
       headers: {
         'X-RapidAPI-Host': 'current-news.p.rapidapi.com',
         'X-RapidAPI-Key': process.env.REACT_APP_CURRENT_NEWS_API_KEY
@@ -27,7 +27,7 @@ export default function Home() {
     }).catch(function (error) {
       console.error(error);
     });
-  }, [])
+  }, [props.category])
 
   return (
     <>
