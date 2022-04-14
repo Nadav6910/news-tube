@@ -6,6 +6,9 @@ import Navbar from "./components/Navbar"
 import Home from "./pages/Home"
 import BusinessPage from "./pages/BusinessPage"
 import EntertainmentPage from "./pages/EntertainmentPage"
+import TechnologyPage from "./pages/TechnologyPage"
+import SciencePage from "./pages/SciencePage"
+import SportsPage from "./pages/SportsPage"
 import Footer from "./components/Footer"
 
 export const AppContext = createContext(null)
@@ -45,6 +48,9 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/business" element={<BusinessPage />} />
             <Route path="/entertainment" element={<EntertainmentPage />} />
+            <Route path="/technology" element={<TechnologyPage />} />
+            <Route path="/science" element={<SciencePage />} />
+            <Route path="/sports" element={<SportsPage />} />
             <Route path="*" element={<Home />} />
           </Routes>
 

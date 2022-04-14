@@ -55,6 +55,18 @@
   background-color: #47bcd4;
 }
 
+.tag-technology {
+  background-color: #6d33dc;
+}
+
+.tag-science {
+  background-color: #a59e2c;
+}
+
+.tag-sports {
+  background-color: #323bb1;
+}
+
 .card-body p {
   font-size: 13px;
   margin: 0 0 40px;

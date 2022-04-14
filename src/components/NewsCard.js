@@ -1,5 +1,5 @@
 import "../styles/card.css";
-import { useContext } from "react"
+import { useContext, useState } from "react"
 import { AppContext } from "../App"
 import noPhotoImage from "../images/no-photo.png"
 import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
@@ -7,12 +7,20 @@ import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
 export default function NewsCard(props) {
 
     const { themeState } = useContext(AppContext)
+    const [imageLoaded, setimageLoaded] = useState(false)
 
     return (
         <div className="card-container">
             <div className="card" style={{"backgroundColor": themeState && "#414141"}}>
                 <div className="card-header">
-                    <img src={props.image === null ? noPhotoImage : props.image} alt="source" style={{"objectFit": props.image === null && "contain"}}/>
+                    <img onError={({ currentTarget }) => {
+                        currentTarget.onerror = null
+                        currentTarget.src=noPhotoImage}}
+                        onLoad={() => setimageLoaded(true)} 
+                        src={props.image === null || imageLoaded === false ? noPhotoImage : props.image} 
+                        style={{"objectFit": props.image === null || imageLoaded === false ? "contain" : "cover"}}
+                        alt="source" 
+                    />
                 </div>
                 <div className="card-body" style={{"backgroundColor": themeState && "#414141", "color": themeState && "white"}}>
                     <span className={`tag tag-${props.category}`}>{props.category === "general" ? "Tranding" : props.category}</span>

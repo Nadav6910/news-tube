@@ -21,7 +21,6 @@ export default function CategorySelector() {
         setCategory(location.pathname.split("/")[1])
       }
     }, [location])
-    
 
     const handleChange = (event) => {
         setCategory(event.target.value)
@@ -41,7 +40,6 @@ export default function CategorySelector() {
                     <MenuItem value="Business">Business</MenuItem>
                     <MenuItem value="Entertainment">entertainment</MenuItem>
                     <MenuItem value="Technology">Technology</MenuItem>
-                    <MenuItem value="Health">Health</MenuItem>
                     <MenuItem value="Science">Science</MenuItem>
                     <MenuItem value="Sports">Sports</MenuItem>
                 </Select>

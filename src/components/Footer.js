@@ -16,17 +16,17 @@ export default function Footer() {
             <div className="footer-left">
 
                 <p className="footer-links">
-                    <a className="link-1" href="#root">Home</a>
+                    <a className="link-1" href="/">Home</a>
 
-                    <a href="#root">Business</a>
+                    <a href="/Business">Business</a>
 
-                    <a href="#root">entertainment</a>
+                    <a href="/Entertainment">Entertainment</a>
 
-                    <a href="#root">Technology</a>
+                    <a href="/Technology">Technology</a>
 
-                    <a href="#root">Science</a>
+                    <a href="/Science">Science</a>
 
-                    <a href="#root">Sports</a>
+                    <a href="/Sports">Sports</a>
                 </p>
 
                 <p>News Tube &copy; 2022</p>
