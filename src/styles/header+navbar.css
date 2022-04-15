@@ -243,6 +243,9 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 2em;
+    border: 2px solid;
+    border-left: transparent;
+    border-right: transparent;
 }
 
 .category-selector-container {

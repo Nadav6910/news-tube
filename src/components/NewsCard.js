@@ -1,6 +1,7 @@
 import "../styles/card.css";
 import { useContext, useState } from "react"
 import { AppContext } from "../App"
+import imageLoading from "../images/image-loading.gif"
 import noPhotoImage from "../images/no-photo.png"
 import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
 
@@ -17,7 +18,7 @@ export default function NewsCard(props) {
                         currentTarget.onerror = null
                         currentTarget.src=noPhotoImage}}
                         onLoad={() => setimageLoaded(true)} 
-                        src={props.image === null || imageLoaded === false ? noPhotoImage : props.image} 
+                        src={imageLoaded === false ? imageLoading : props.image === null ? noPhotoImage : props.image} 
                         style={{"objectFit": props.image === null || imageLoaded === false ? "contain" : "cover"}}
                         alt="source" 
                     />

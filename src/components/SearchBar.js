@@ -9,7 +9,7 @@ export default function SearchBar() {
         <div className="search-bar-container">
             <form className="search-form" onSubmit={e => e.preventDefault()} role="search">
                 <input className="search-input" type="search" placeholder="Search..." autoFocus />
-                <button className="search-btn" style={{"backgroundColor": themeState ? "#6c19ff" : "#01b2d7"}} type="submit">Go</button>    
+                <button className="search-btn" style={{"backgroundColor": themeState ? "#6c19ff" : "#01b2d7", "color": themeState && "white"}} type="submit">Go</button>    
             </form>
         </div>
     )
