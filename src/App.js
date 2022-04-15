@@ -9,6 +9,7 @@ import EntertainmentPage from "./pages/EntertainmentPage"
 import TechnologyPage from "./pages/TechnologyPage"
 import SciencePage from "./pages/SciencePage"
 import SportsPage from "./pages/SportsPage"
+import SearchPage from "./pages/SearchPage"
 import Footer from "./components/Footer"
 
 export const AppContext = createContext(null)
@@ -51,6 +52,7 @@ function App() {
             <Route path="/technology" element={<TechnologyPage />} />
             <Route path="/science" element={<SciencePage />} />
             <Route path="/sports" element={<SportsPage />} />
+            <Route path="/search" element={<SearchPage />} />
             <Route path="*" element={<Home />} />
           </Routes>
 
