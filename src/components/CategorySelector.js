@@ -18,7 +18,11 @@ export default function CategorySelector() {
       if (location.pathname === "/") {
         setCategory("Tranding")
       } else {
-        setCategory(location.pathname.split("/")[1])
+        if (location.pathname.includes("/search")) {
+          setCategory("")
+        } else {
+          setCategory(location.pathname.split("/")[1])
+        }
       }
     }, [location])
 

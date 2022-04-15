@@ -27,10 +27,16 @@ function App() {
   // })
 
   const [themeState, setThemeState] = useState(localStorage.getItem("theme") === "dark" ? true : false)
+  const [searchTerm, setSearchTerm] = useState("")
 
   //getting state of toggle from header component
   const themeToggle = (state) => {
     setThemeState(state)
+  }
+
+  //getting state of search term from searchbar component
+  const getSearchTerm = (searchTerm) => {
+    setSearchTerm(searchTerm)
   }
 
   if (themeState) {
@@ -40,10 +46,10 @@ function App() {
   }
 
   return (
-    <AppContext.Provider value={{ themeState }}>    
+    <AppContext.Provider value={{ themeState, searchTerm }}>    
       <div className="App">
         <Header themeState={themeToggle}/>
-        <Navbar />
+        <Navbar data={getSearchTerm}/>
 
           <Routes>
             <Route path="/" element={<Home />} />
@@ -52,7 +58,7 @@ function App() {
             <Route path="/technology" element={<TechnologyPage />} />
             <Route path="/science" element={<SciencePage />} />
             <Route path="/sports" element={<SportsPage />} />
-            <Route path="/search" element={<SearchPage />} />
+            <Route path="/search/:name" element={<SearchPage />} />
             <Route path="*" element={<Home />} />
           </Routes>
 
