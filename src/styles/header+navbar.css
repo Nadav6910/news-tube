@@ -34,6 +34,7 @@
     align-items: center;
     margin: auto;
     transform: translate(62px);
+    cursor: pointer;
 }
 
 .header-text-news {

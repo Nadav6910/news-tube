@@ -18,8 +18,8 @@ export default function SearchNewsCard(props) {
                         currentTarget.onerror = null
                         currentTarget.src=noPhotoImage}}
                         onLoad={() => setimageLoaded(true)} 
-                        src={imageLoaded === false ? imageLoading : props.image === null ? noPhotoImage : props.image} 
-                        style={{"objectFit": props.image === null || imageLoaded === false ? "contain" : "cover"}}
+                        src={imageLoaded === false ? imageLoading : props.image === null || props.image.includes("blank") ? noPhotoImage : props.image} 
+                        style={{"objectFit": props.image === null || imageLoaded === false || props.image.includes("blank") ? "contain" : "cover"}}
                         alt="source" 
                     />
                 </div>
@@ -29,7 +29,7 @@ export default function SearchNewsCard(props) {
                         {props.title && props.title}
                     </h4>
                     <p>
-                        {props.content && props.content}
+                        {props.content && props.content.slice(0, 150) + "..."}
                     </p>
                     <div className="info-section">
                         <div className="info">

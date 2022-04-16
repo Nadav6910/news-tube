@@ -14,6 +14,8 @@ export default function SearchPage() {
     const [generalNews, setGeneralNews] = useState(null)
 
     useEffect(() => {
+        setGeneralNews(null)
+
         const options = {
             method: 'GET',
             url: 'https://newscatcher.p.rapidapi.com/v1/search_free',
@@ -33,7 +35,6 @@ export default function SearchPage() {
 
     return (
         <>
-        {console.log(generalNews)}
             {generalNews === null ?
                 <div className="loading-container">
                     <TwinSpin className="loading-animation" color={themeState ? "#6c19ff" : "#01b2d7"} width="70px" height="70px" duration="3s"/>  
