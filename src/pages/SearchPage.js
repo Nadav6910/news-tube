@@ -15,22 +15,24 @@ export default function SearchPage() {
 
     useEffect(() => {
         setGeneralNews(null)
+        if (searchTerm !== '') {
 
-        const options = {
-            method: 'GET',
-            url: 'https://newscatcher.p.rapidapi.com/v1/search_free',
-            params: {q: searchTerm, lang: 'en', media: 'True'},
-            headers: {
-              'X-RapidAPI-Host': 'newscatcher.p.rapidapi.com',
-              'X-RapidAPI-Key': process.env.REACT_APP_CURRENT_NEWS_API_KEY
-            }
-          };
-          
-          axios.request(options).then(async function (response) {
-             setGeneralNews(await response.data)
-          }).catch(function (error) {
-              console.error(error);
-          });
+            const options = {
+                method: 'GET',
+                url: 'https://newscatcher.p.rapidapi.com/v1/search_free',
+                params: {q: searchTerm, lang: 'en', media: 'True'},
+                headers: {
+                'X-RapidAPI-Host': 'newscatcher.p.rapidapi.com',
+                'X-RapidAPI-Key': process.env.REACT_APP_CURRENT_NEWS_API_KEY
+                }
+            };
+            
+            axios.request(options).then(async function (response) {
+                setGeneralNews(await response.data)
+            }).catch(function (error) {
+                console.error(error);
+            });
+        }
     }, [searchTerm])
 
     return (
