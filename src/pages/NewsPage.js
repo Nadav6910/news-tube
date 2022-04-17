@@ -6,16 +6,19 @@ import TwinSpin from "react-cssfx-loading/lib/TwinSpin";
 import NewsCard from "../components/NewsCard";
 import axios from "axios"
 
-export default function SportsPage() {
+export default function NewsPage(props) {
 
   const { themeState } = useContext(AppContext)
 
   const [generalNews, setGeneralNews] = useState(null)
 
   useEffect(() => {
+
+    setGeneralNews(null)
+
     const options = {
       method: 'GET',
-      url: 'https://current-news.p.rapidapi.com/news/sports',
+      url: `https://current-news.p.rapidapi.com/news/${props.category}`,
       headers: {
         'X-RapidAPI-Host': 'current-news.p.rapidapi.com',
         'X-RapidAPI-Key': process.env.REACT_APP_CURRENT_NEWS_API_KEY
@@ -27,7 +30,7 @@ export default function SportsPage() {
     }).catch(function (error) {
       console.error(error);
     });
-  }, [])
+  }, [props.category])
 
   return (
     <>

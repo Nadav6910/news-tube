@@ -7,6 +7,27 @@
   margin-bottom: 2em;
 }
 
+/* set grid row to 2 cards row under 960px width */
+@media screen and (max-width: 960px) {
+  .home-page-container {
+    grid-template-columns: auto auto;
+  }
+}
+
+/* set grid row to 1 card row under 640px width */
+@media screen and (max-width: 640px) {
+  .home-page-container {
+    grid-template-columns: auto;
+  }
+}
+
+/* make card bottom gap shorter under 450px width */
+@media screen and (max-width: 450px) {
+  .home-page-container {
+    grid-row-gap: 1em;
+  }
+}
+
 .loading-container {
   display: flex;
   justify-content: center;

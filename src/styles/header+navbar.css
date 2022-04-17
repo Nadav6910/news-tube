@@ -37,6 +37,21 @@
     cursor: pointer;
 }
 
+/* re order header under 640px width */
+@media screen and (max-width: 640px) {
+  .header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo-container {
+    margin: 0;
+    transform: unset;
+    padding-left: 1em;
+  }
+}
+
 .header-text-news {
     font-family: var(--noto-sans);
     font-size: 2rem;
@@ -51,6 +66,21 @@
     -webkit-text-fill-color: transparent;
     margin-left: 0.3em;
     margin-bottom: 0.85em;
+}
+
+/* make logo smaller under 425px width */
+@media screen and (max-width: 425px) {
+  .header-text-news {
+    font-size: 1.4rem;
+  }
+
+  .header-text-tube {
+    font-size: 1rem;
+  }
+
+  .news-icon {
+    width: 3.5em;
+  }
 }
 
 /* theme toggle section  */
@@ -254,6 +284,7 @@
 }
 
 .category-selector {
+    align-self: center;
     height: 3em;
     font-family: var(--arimo) !important;
 }
@@ -264,6 +295,17 @@
     background: var(--primary-logo-color);
     border-radius: var(--rad);
     border: 1px solid lightgray;
+}
+
+/* make inputs shorter under 425px width */
+@media screen and (max-width: 425px) {
+  .category-selector {
+    width: 6.86em;
+  }
+
+  .search-form {
+    width: 10em;
+  }
 }
 
 .search-input, button {
@@ -310,4 +352,20 @@
 
 .search-input:not(:placeholder-shown) + .search-btn {
     display: block;
+}
+
+/* change search btn size under 425px width */
+@media screen and (max-width: 425px) {
+  .search-btn {
+    display: none;
+    width: 2.2em !important;
+  }
+
+  .search-input:not(:placeholder-shown) {
+    width: calc(100% - 2.2em) !important
+  }
+
+  .search-input, button {
+    width: unset;
+  }
 }

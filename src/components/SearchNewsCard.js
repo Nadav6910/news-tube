@@ -33,7 +33,7 @@ export default function SearchNewsCard(props) {
                     </p>
                     <div className="info-section">
                         <div className="info">
-                            <h5>{props.source}</h5>
+                            <h5>{props.source && props.source.slice(0, 25) + "..."}</h5>
                             <small style={{"color": themeState ? "#a7acbd" : "#545d7a"}}>{props.date && props.date}</small>
                         </div>
                         <div className="article-link-container">

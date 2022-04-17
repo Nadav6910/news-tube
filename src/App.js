@@ -3,12 +3,7 @@ import { Routes, Route } from "react-router-dom"
 import { useState, createContext } from "react"
 import Header from "./components/Header"
 import Navbar from "./components/Navbar"
-import Home from "./pages/Home"
-import BusinessPage from "./pages/BusinessPage"
-import EntertainmentPage from "./pages/EntertainmentPage"
-import TechnologyPage from "./pages/TechnologyPage"
-import SciencePage from "./pages/SciencePage"
-import SportsPage from "./pages/SportsPage"
+import NewsPage from "./pages/NewsPage"
 import SearchPage from "./pages/SearchPage"
 import Footer from "./components/Footer"
 
@@ -52,14 +47,14 @@ function App() {
         <Navbar data={getSearchTerm}/>
 
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/business" element={<BusinessPage />} />
-            <Route path="/entertainment" element={<EntertainmentPage />} />
-            <Route path="/technology" element={<TechnologyPage />} />
-            <Route path="/science" element={<SciencePage />} />
-            <Route path="/sports" element={<SportsPage />} />
+            <Route path="/" element={<NewsPage category="general"/>} />
+            <Route path="/business" element={<NewsPage category="business"/>} />
+            <Route path="/entertainment" element={<NewsPage category="entertainment"/>} />
+            <Route path="/technology" element={<NewsPage category="technology"/>} />
+            <Route path="/science" element={<NewsPage category="science"/>} />
+            <Route path="/sports" element={<NewsPage category="sports"/>} />
             <Route path="/search/:name" element={<SearchPage />} />
-            <Route path="*" element={<Home />} />
+            <Route path="*" element={<NewsPage category="general"/>} />
           </Routes>
 
         <Footer />
