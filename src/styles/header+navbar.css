@@ -304,7 +304,7 @@
   }
 
   .search-form {
-    width: 12em;
+    width: 10em;
   }
 }
 
@@ -331,6 +331,7 @@
 }
 
 .search-input[type="search"]::-webkit-search-cancel-button {
+    -webkit-appearance: none;
     margin-left: 0.5em;
     cursor: pointer;
 }
@@ -358,11 +359,11 @@
 @media screen and (max-width: 425px) {
   .search-btn {
     display: none;
-    width: 2.3em !important;
+    width: 2.2em !important;
   }
 
   .search-input:not(:placeholder-shown) {
-    width: calc(100% - 2.3em) !important
+    width: calc(100% - 2.2em) !important
   }
 
   .search-input, button {
