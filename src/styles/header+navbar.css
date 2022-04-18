@@ -337,6 +337,7 @@
 .search-input[type="search"]::-webkit-search-cancel-button {
     -webkit-appearance: searchfield;
     margin-left: 0.5em;
+    z-index: 1;
     cursor: pointer;
 }
 
