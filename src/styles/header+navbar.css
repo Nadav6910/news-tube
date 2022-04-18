@@ -21,6 +21,10 @@
     --bez: cubic-bezier(0, 0, 0.43, 1.49);
   }
 
+  *::-webkit-search-cancel-button {
+    -webkit-appearance: searchfield-cancel-button;
+}
+
 /* header section  */
 
 .header-container {
@@ -331,7 +335,7 @@
 }
 
 .search-input[type="search"]::-webkit-search-cancel-button {
-    -webkit-appearance: none;
+    -webkit-appearance: searchfield;
     margin-left: 0.5em;
     cursor: pointer;
 }
