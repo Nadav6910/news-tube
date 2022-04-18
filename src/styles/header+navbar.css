@@ -374,4 +374,8 @@
   .search-input, button {
     width: unset;
   }
+
+  .search-input[type="search"]::-webkit-search-cancel-button {
+    margin: 0;
+  }
 }
