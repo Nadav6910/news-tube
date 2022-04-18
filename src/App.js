@@ -40,6 +40,10 @@ function App() {
       document.body.style.backgroundColor = 'white'
   }
 
+  // window.addEventListener("scroll", () => {
+  //   console.log(window.scrollY)
+  // })
+
   return (
     <AppContext.Provider value={{ themeState, searchTerm }}>    
       <div className="App">

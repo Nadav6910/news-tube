@@ -365,7 +365,7 @@
   .search-btn {
     display: none;
     width: 2.2em !important;
-    padding-right: 2.3em;
+    padding-right: 1.8em;
   }
 
   .search-input:not(:placeholder-shown) {
