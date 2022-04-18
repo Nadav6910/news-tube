@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar"
 import NewsPage from "./pages/NewsPage"
 import SearchPage from "./pages/SearchPage"
 import Footer from "./components/Footer"
+import ScrollUpBtn from "./components/ScrollUpBtn"
 
 export const AppContext = createContext(null)
 
@@ -22,12 +23,25 @@ function App() {
   // })
 
   const [themeState, setThemeState] = useState(localStorage.getItem("theme") === "dark" ? true : false)
+  const [renderScrollBtn, setRenderScrollBtn] = useState(false)
   const [searchTerm, setSearchTerm] = useState("")
 
   //getting state of toggle from header component
   const themeToggle = (state) => {
     setThemeState(state)
   }
+
+  //get scroll position and render Scroll Btn on screen if scroll position is greater than 175
+  window.addEventListener("scroll", () => {
+
+    if (window.scrollY > 175) {
+      setRenderScrollBtn(true)
+    }
+
+    else {
+      setRenderScrollBtn(false)
+    }
+  })
 
   //getting state of search term from searchbar component
   const getSearchTerm = (searchTerm) => {
@@ -39,10 +53,6 @@ function App() {
   } else {
       document.body.style.backgroundColor = 'white'
   }
-
-  // window.addEventListener("scroll", () => {
-  //   console.log(window.scrollY)
-  // })
 
   return (
     <AppContext.Provider value={{ themeState, searchTerm }}>    
@@ -61,6 +71,7 @@ function App() {
             <Route path="*" element={<NewsPage category="general"/>} />
           </Routes>
 
+          {renderScrollBtn && <ScrollUpBtn />}
         <Footer />
       </div>
     </AppContext.Provider>
