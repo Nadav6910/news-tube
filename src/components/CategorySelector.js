@@ -12,11 +12,11 @@ export default function CategorySelector() {
     const navigate = useNavigate()
     let location = useLocation()
 
-    const [category, setCategory] = useState("Tranding");
+    const [category, setCategory] = useState("Trending");
 
     useEffect(() => {
       if (location.pathname === "/") {
-        setCategory("Tranding")
+        setCategory("Trending")
       } else {
         if (location.pathname.includes("/search")) {
           setCategory("")
@@ -28,7 +28,7 @@ export default function CategorySelector() {
 
     const handleChange = (event) => {
         setCategory(event.target.value)
-        event.target.value === "Tranding" ? navigate("/") : navigate(`/${event.target.value}`)
+        event.target.value === "Trending" ? navigate("/") : navigate(`/${event.target.value}`)
     }
 
     return (
@@ -40,9 +40,9 @@ export default function CategorySelector() {
                 value={category}
                 onChange={handleChange}
                 >
-                    <MenuItem value="Tranding">Tranding</MenuItem>
+                    <MenuItem value="Trending">Trending</MenuItem>
                     <MenuItem value="Business">Business</MenuItem>
-                    <MenuItem value="Entertainment">entertainment</MenuItem>
+                    <MenuItem value="Entertainment">Entertainment</MenuItem>
                     <MenuItem value="Technology">Technology</MenuItem>
                     <MenuItem value="Science">Science</MenuItem>
                     <MenuItem value="Sports">Sports</MenuItem>
