@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
+/* gloval vars  */
+:root {
+  --hover-article-link-color: white;
+}
+
 .card-container {
     width: fit-content;
     height: fit-content;
@@ -106,4 +111,8 @@
   display: flex;
   align-items: center;
   text-decoration: none;
+}
+
+.article-link:hover {
+  color: var(--hover-article-link-color) !important;
 }
