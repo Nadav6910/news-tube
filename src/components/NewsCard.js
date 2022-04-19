@@ -24,7 +24,7 @@ export default function NewsCard(props) {
                     />
                 </div>
                 <div className="card-body" style={{"backgroundColor": themeState && "#414141", "color": themeState && "white"}}>
-                    <span className={`tag tag-${props.category}`}>{props.category === "general" ? "Tranding" : props.category}</span>
+                    <span className={`tag tag-${props.category}`}>{props.category === "general" ? "Trending" : props.category}</span>
                     <h4>
                         {props.title && props.title.split(" - ")[0]}
                     </h4>
