@@ -1,6 +1,11 @@
 import "../styles/footer.css";
+import { useNavigate } from "react-router-dom";
+
 
 export default function Footer() {
+
+    const navigate = useNavigate()
+
     return (
 
         <footer className="footer-distributed">
@@ -16,20 +21,20 @@ export default function Footer() {
             <div className="footer-left">
 
                 <p className="footer-links">
-                    <a className="link-1" href="/">Home</a>
-
-                    <a href="/business">Business</a>
-
-                    <a href="/entertainment">Entertainment</a>
-
-                    <a href="/technology">Technology</a>
-
-                    <a href="/science">Science</a>
-
-                    <a href="/sports">Sports</a>
+                    <button className="link-1" onClick={() => navigate("/")}>Home</button>
+                    <span>●</span>
+                    <button onClick={() => {navigate("/Business"); window.scrollTo({top: 0})}}>Business</button>
+                    <span>●</span>
+                    <button onClick={() => {navigate("/Entertainment"); window.scrollTo({top: 0})}}>Entertainment</button>
+                    <span>●</span>
+                    <button onClick={() => {navigate("/Technology"); window.scrollTo({top: 0})}}>Technology</button>
+                    <span>●</span>
+                    <button onClick={() => {navigate("/Science"); window.scrollTo({top: 0})}}>Science</button>
+                    <span>●</span>
+                    <button onClick={() => {navigate("/Sports"); window.scrollTo({top: 0})}}>Sports</button>
                 </p>
 
-                <p>News Tube &copy; 2022</p>
+                <p className="copy-rights">News Tube &copy; 2022</p>
             </div>
 
         </footer>

@@ -73,6 +73,32 @@
   transition:all .25s;
 }
 
+.footer-links button{
+  background: transparent;
+  color: white;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.footer-links button:hover{
+  text-decoration: underline;
+}
+
+.footer-links span{
+  font-size: 0.8rem;
+}
+
+.footer-links {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.copy-rights {
+  padding-left: 0.5em;
+}
+
 .footer-distributed .footer-right a:hover{transform:scale(1.1); -webkit-transform:scale(1.1);}
 
 .footer-distributed p.footer-links a:hover{text-decoration:underline;}
@@ -89,5 +115,9 @@
   }
   .footer-distributed .footer-left p.footer-links {
     line-height: 1.8;
+  }
+
+  .footer-links {
+    justify-content: center;
   }
 }
