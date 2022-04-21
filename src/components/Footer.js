@@ -18,15 +18,15 @@ export default function Footer() {
                 <p className="footer-links">
                     <a className="link-1" href="/">Home</a>
 
-                    <a href="/Business">Business</a>
+                    <a href="/business">Business</a>
 
-                    <a href="/Entertainment">Entertainment</a>
+                    <a href="/entertainment">Entertainment</a>
 
-                    <a href="/Technology">Technology</a>
+                    <a href="/technology">Technology</a>
 
-                    <a href="/Science">Science</a>
+                    <a href="/science">Science</a>
 
-                    <a href="/Sports">Sports</a>
+                    <a href="/sports">Sports</a>
                 </p>
 
                 <p>News Tube &copy; 2022</p>

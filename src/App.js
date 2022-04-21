@@ -7,14 +7,14 @@ import NewsPage from "./pages/NewsPage"
 import SearchPage from "./pages/SearchPage"
 import Footer from "./components/Footer"
 import ScrollUpBtn from "./components/ScrollUpBtn"
-
+// import axios from 'axios'
 export const AppContext = createContext(null)
 
 function App() {
 
   // let dateYesterday = Math.floor(new Date(Date.now() - 86400000) / 1000)
 
-  // axios.get(`https://api.pushshift.io/reddit/search/submission/?subreddit=worldnews&sort=desc&sort_type=created_utc&after=${dateYesterday}&size=1000`)
+  // axios.get(`https://api.pushshift.io/reddit/search/submission/?subreddit=soccer&sort=desc&sort_type=created_utc&after=${dateYesterday}&size=1000`)
   // .then(function (response) {
   //   console.log(response);
   // })
@@ -59,6 +59,8 @@ function App() {
       <div className="App">
         <Header themeState={themeToggle}/>
         <Navbar data={getSearchTerm}/>
+
+        {/* <iframe class="media-element _3K6DCjWs2dQ93YYZDOHjib _3pYTJO5FjsoQWRUsIFQASN " height="274" width="70%" title="title" sandbox="allow-forms allow-orientation-lock allow-popups allow-popups-to-escape-sandbox allow-presentation allow-same-origin allow-scripts allow-top-navigation-by-user-activation" scrolling="yes"  src="https://www.redditmedia.com/mediaembed/u7foij?responsive=true&amp;is_nightmode=true" allowfullscreen=""></iframe> */}
 
           <Routes>
             <Route path="/" element={<NewsPage category="general"/>} />
