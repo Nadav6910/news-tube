@@ -75,7 +75,7 @@ function App() {
         <Footer />
       </div>
     </AppContext.Provider>
-  );
+  )
 }
 
 export default App
