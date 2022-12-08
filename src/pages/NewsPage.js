@@ -16,22 +16,27 @@ export default function NewsPage(props) {
 
     setGeneralNews(null)
 
-    const options = {
-      method: 'GET',
-      url: `https://current-news.p.rapidapi.com/news/${props.category}`,
-      headers: {
-        'X-RapidAPI-Host': 'current-news.p.rapidapi.com',
-        'X-RapidAPI-Key': process.env.REACT_APP_CURRENT_NEWS_API_KEY
-      }
-    };
+    // const options = {
+    //   method: 'GET',
+    //   url: `https://current-news.p.rapidapi.com/news/${props.category}`,
+    //   headers: {
+    //     'X-RapidAPI-Host': 'current-news.p.rapidapi.com',
+    //     'X-RapidAPI-Key': process.env.REACT_APP_CURRENT_NEWS_API_KEY
+    //   }
+    // };
+
+    const url = `https://newsapi.org/v2/top-headlines?country=us&category=${props.category}&apiKey=${process.env.REACT_APP_NEWS_API_KEY}`
+
     
-    axios.request(options).then(async function (response) {
+    axios.request(url).then(async function (response) {
       setGeneralNews(await response.data)
     }).catch(function (error) {
       console.error(error);
-    });
-  }, [props.category])
+    })
 
+  }, [props.category])
+  
+  
   return (
     <>
       {generalNews === null ?
@@ -40,7 +45,7 @@ export default function NewsPage(props) {
         </div> :
     
       <div className="home-page-container">
-        {generalNews.news.map((atricle, index) => {
+        {generalNews?.articles.map((atricle, index) => {
 
           if (atricle.source.name !== "YouTube") {
             
